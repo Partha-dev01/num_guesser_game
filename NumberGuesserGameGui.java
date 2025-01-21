@@ -5,8 +5,8 @@ import java.util.Random;
 public class NumberGuesserGameGui extends JFrame {
     private int randomNumber;
     private int triesLeft;
-    private static final int START = 1;
-    private static final int END = 100;
+    private int start;
+    private int end;
     private static final int DIFF = 10;
     private static final int MAX_TRIES = 15;
     private JTextField inputField;
@@ -49,14 +49,18 @@ public class NumberGuesserGameGui extends JFrame {
     }
 
     private void setupGame() {
-        randomNumber = new Random().nextInt(END - START + 1) + START;
-        messageLabel.setText("Guess a number between " + START + " and " + END + ". Allowed difference: " + DIFF);
+        Random rand = new Random();
+        start = rand.nextInt(1000); 
+        end = start + rand.nextInt(5000) + 1000; 
+        randomNumber = rand.nextInt(end - start + 1) + start;
+        messageLabel.setText("Guess a number between " + start + " and " + end + ". Allowed difference: " + DIFF);
         triesLeft = MAX_TRIES;
         inputField.setEnabled(true);
         guessButton.setEnabled(true);
         inputField.setText("");
         resetButton.setVisible(false);
     }
+    
 
     private void makeGuess() {
         try {

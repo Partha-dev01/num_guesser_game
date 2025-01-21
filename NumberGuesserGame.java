@@ -11,7 +11,6 @@ public class NumberGuesserGame {
         int Diff = 10;
         int max_try = 5;
         int machineNumber = random.nextInt(end - start + 1) + start;
-
         System.out.println("Welcome to the Number Guessing Game!");
         System.out.println("Guess a number between " + start + " and " + end + " within " + max_try + " tries.");
         System.out.println("Allowed difference: " + Diff);
