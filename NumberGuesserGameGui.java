@@ -77,7 +77,7 @@ public class NumberGuesserGameGui extends JFrame {
             } else {
                 String rangeMessage = (difference > DIFF ? "Outside range." : "Within range.");
                 String directionMessage = (guess < randomNumber ? " Try higher." : " Try lower.");
-                messageLabel.setText(rangeMessage + directionMessage + " Tries left: " + triesLeft);
+                messageLabel.setText(rangeMessage + directionMessage + " Tries left: " + triesLeft + " (Range: " + start + "-" + end + ")");
             }
         } catch (NumberFormatException e) {
             messageLabel.setText("Please enter a valid number!");
